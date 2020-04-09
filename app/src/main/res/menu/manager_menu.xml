@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="@string/addCountry" android:id="@+id/addCountry" />
+    <item android:title="@string/rate_me" android:id="@+id/rateMe" />
+    <item android:title="@string/about" android:id="@+id/about" />
+    <item android:title="@string/pie_chart" android:id="@+id/pieChart" />
+
+
+</menu>

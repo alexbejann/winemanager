@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">WineManager</string>
+    <string name="Description">Description:</string>
+    <string name="Year">Production year:</string>
+    <string name="about">About</string>
+    <string name="rate_me">Rate me!</string>
+    <string name="wines">Wines</string>
+    <string name="delete_wine">Delete Wine</string>
+    <string name="add_wine">Add Wine</string>
+    <string name="Name">Name*:</string>
+    <string name="Grapes">Grapes*:</string>
+    <string name="Country">Country*:</string>
+    <string name="Region">Region:</string>
+    <string name="Add">Add</string>
+    <string name="Mandatory">"Fields with * are mandatory "</string>
+    <string name="wineCreated">Wine added</string>
+    <string name="AddImage">Add  Picture</string>
+    <string name="EnterWineName">Enter wine name:</string>
+    <string name="Delete">Remove</string>
+    <string name="aboutManager">About WineManager</string>
+    <string name="credits">Developed in 2019 by Bejan Alex</string>
+    <string name="rating">You have more than 3 ratings!</string>
+    <string name="no_ratings">You have less than 3 ratings!</string>
+    <string name="rating_send">Rating Saved!</string>
+    <string name="add_rating">Add your rating:</string>
+    <string name="rating_">Rating:</string>
+    <string name="wine_manager">WineManager</string>
+    <string name="addCountry">Add Country</string>
+
+</resources>
