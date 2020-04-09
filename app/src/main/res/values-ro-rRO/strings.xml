@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WineManager</string>
+    <string name="Description">Descriere</string>
+    <string name="Year">Anul Producției</string>
+    <string name="about">Despre</string>
+    <string name="rate_me">Evaluează-mă!</string>
+    <string name="wines">Vinuri</string>
+    <string name="delete_wine">Sterge Vinul</string>
+    <string name="add_wine">Adaugă Vin</string>
+    <string name="Name">Nume*:</string>
+    <string name="Grapes">Struguri*:</string>
+    <string name="Country">Țară*:</string>
+    <string name="Region">Regiune:</string>
+    <string name="Add">Adaugă</string>
+    <string name="Mandatory">Toate cîmpurile cu * sunt obligatorii</string>
+    <string name="wineCreated">Vin adăugat!</string>
+    <string name="AddImage">Adaugă poză</string>
+    <string name="EnterWineName">Numele vinului:</string>
+    <string name="Delete">Șterge</string>
+    <string name="aboutManager">Despre WineManager</string>
+    <string name="credits">Dezvoltată de către Bejan Alex în 2019</string>
+    <string name="rating">Ai mai mult de 3 evaluări!</string>
+    <string name="no_ratings">Ai mai putin de 3 evaluări!</string>
+    <string name="rating_send">Evaluare Salvată!</string>
+    <string name="add_rating">Adauga evaluarea:</string>
+    <string name="rating_">Evaluare:</string>
+    <string name="wine_manager">WineManager</string>
+    <string name="addCountry">Adaugă țară</string>
+    <string name="pie_chart">Pie Chart</string>
+
+</resources>
