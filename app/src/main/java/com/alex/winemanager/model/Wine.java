@@ -13,7 +13,7 @@ public class Wine {
     private  String country;
     private String region;
     private String description;
-    private String picture = "default";
+    private String picture;
 
     public Wine(String name, int year, String grapes, String country, String region, String description, String picture) {
         this.name = name;

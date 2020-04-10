@@ -30,7 +30,7 @@ public class AboutActivity extends AppCompatActivity {
         AverageRatingView.setAverageRating(wineAdmin.getNumberOfRatings(), wineAdmin.getAverageRating());
         AppReviewView.setAppReview(wineAdmin.getAverageRating());
 
-        if (wineAdmin.getNumberOfRatings() > 3) {
+        if (wineAdmin.getNumberOfRatings() > 3) {   // If more than 3
 
            aboutTextView.setText(getString(R.string.rating));
 

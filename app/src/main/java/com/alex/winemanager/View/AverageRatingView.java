@@ -47,7 +47,7 @@ public class AverageRatingView extends LinearLayout {
 
     }
 
-    public void setAverageRating(int numberOfRatings, float average) {
+    public void setAverageRating(int numberOfRatings, float average) { // Set ratings after average
 
         if (numberOfRatings > 1) {
 

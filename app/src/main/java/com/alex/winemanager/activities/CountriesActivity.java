@@ -25,10 +25,10 @@ public class CountriesActivity extends AppCompatActivity {
     private ListView listView;
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu) { // Create up-right corner menu
 
         MenuInflater menuInflater = new MenuInflater(this);
-        menuInflater.inflate(R.menu.manager_menu, menu);
+        menuInflater.inflate(R.menu.manager_menu, menu); // Menu xml file
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -36,7 +36,7 @@ public class CountriesActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if (item.getItemId() == R.id.addWine) { // ADD WINE FORM
+        if (item.getItemId() == R.id.addWine) { // ADD WINE
 
             startActivity(new Intent(getApplicationContext(), AddWineActivity.class));
 
@@ -87,29 +87,27 @@ public class CountriesActivity extends AppCompatActivity {
         });
     }
 
-    private void prepareDisplayList(@NonNull WineAdmin wineAdmin){
+    private void prepareDisplayList(@NonNull WineAdmin wineAdmin){ // Display countries
 
-        //Collections.sort(wineCountries); // Sort alphabetically
         CountryAdapter arrayAdapter = new CountryAdapter(this, wineAdmin.getCountryList());
 
         listView.setAdapter(arrayAdapter);
     }
-    // Export JSON
+
     @Override
-    protected void onPause() {
+    protected void onPause() { // Export JSON
         JSONHelper.exportToJSON(this, wineAdmin.getAllWines());
         super.onPause();
 
     }
 
     @Override
-    protected void onResume() {
+    protected void onResume() { // Notify changes on list
         ((BaseAdapter) listView.getAdapter()).notifyDataSetChanged();
         super.onResume();
     }
 
-    //Disable Back Button
     @Override
-    public void onBackPressed() {
+    public void onBackPressed() { //Disable back button
     }
 }

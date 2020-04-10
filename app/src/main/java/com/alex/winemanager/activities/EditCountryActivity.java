@@ -30,12 +30,12 @@ public class EditCountryActivity extends AppCompatActivity {
     }
 
 
-    public void saveCountryName(View view) {
+    public void saveCountryName(View view) { // Save button
         if (!country.getText().toString().isEmpty()){
+
             wineAdmin.getCountryByName(countryName).setCountryName(country.getText().toString());
-
             finish();
-        }
 
+        }
     }
 }

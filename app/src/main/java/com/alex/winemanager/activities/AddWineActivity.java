@@ -95,7 +95,7 @@ public class AddWineActivity extends AppCompatActivity {
     }
 
     @SuppressLint("ResourceType")
-    public void onClickHandlerCreateWine(View view) {
+    public void onClickHandlerCreateWine(View view) { // Save button onClick handler
         String filePath=saveImageToStorage(bitmap);
 
         String wineName = name.getText().toString();
@@ -109,6 +109,7 @@ public class AddWineActivity extends AppCompatActivity {
             wineCountryObject = new Country(wineCountry);
             wineAdmin.addCountry(wineCountryObject);
         }
+        // create Wine object
         wine = new Wine(wineName.toUpperCase(), wineYear, wineGrapes,wineCountryObject.getCountryName(), wineRegion, wineDescription, filePath);
         Log.i("imageDisplay", wine.getPicture());
         imageName.setText(wine.getPicture());
@@ -135,24 +136,22 @@ public class AddWineActivity extends AppCompatActivity {
         return !wineName.isEmpty() || !wineCountry.isEmpty() || !wineGrapes.isEmpty()  || !wineYear.isEmpty();
     }
 
-    public void addImage(View view) {
+    public void addImage(View view) { // Add picture
 
         Intent intent =new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent,TAKE_PHOTO_REQ_CODE);
 
     }
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) { // Camera
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==TAKE_PHOTO_REQ_CODE && resultCode== Activity.RESULT_OK){
-            if(data!=null){
+        if (requestCode==TAKE_PHOTO_REQ_CODE && resultCode== Activity.RESULT_OK){
+            if (data!=null){
                 bitmap=(Bitmap) data.getExtras().get("data");
-                //imageView.setImageBitmap(bitmap);
-
             }
         }
     }
-    public String saveImageToStorage(Bitmap bitmap){
+    public String saveImageToStorage(Bitmap bitmap){ // Save picture to data/com.alex.winemanager
 
         File file1=getApplicationContext().getFilesDir();
         File file=new File(file1,name.getText().toString()+"data.jpg");

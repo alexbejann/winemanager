@@ -10,10 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WineAdmin {
+
     private List<Rating> ratings = genRating();
     private List<Country> countries =new ArrayList<>(); // main storage
-    //private List<Wine> wineList= new ArrayList<>(); // temporary storage
-
     private static WineAdmin instance = null;
 
     public static WineAdmin getInstance() { //Singleton
@@ -22,13 +21,13 @@ public class WineAdmin {
         }
         return instance;
     }
-
+    // Set countries
     public void setCountries(List<Country> countries) {
         this.countries = countries;
     }
 
-    // remove wine by name
-    public boolean removeWineByName(String wineName) {
+
+    public boolean removeWineByName(String wineName) {// Remove wine by name
         Wine wine = getWineByName(wineName);
         for (Country country:countries) {
             if (country.isHere(wine)){
@@ -39,7 +38,7 @@ public class WineAdmin {
         return false;
     }
 
-    public void removeWine(Wine wine){
+    public void removeWine(Wine wine){ // Remove wine
         for (Country country:countries) {
             for (Wine wineCountry:country.getWineList()) {
                 if (wineCountry.getName().equals(wine.getName())){
@@ -49,13 +48,13 @@ public class WineAdmin {
             }
         }
     }
-    public Country getCountryByName(String countryName){
+    public Country getCountryByName(String countryName){ // Get country by name
         for (Country country:countries) {
             if (country.getCountryName().equals(countryName)) return country;
         }
         return null;
     }
-    public void addCountry(Country country){
+    public void addCountry(Country country){ // Add country
         if(countries.isEmpty()){
             countries.add(country);
         }else{
@@ -65,7 +64,7 @@ public class WineAdmin {
         }
     }
 
-    public void addWineObject(Wine wine) {
+    public void addWineObject(Wine wine) { // Add wine object
         boolean doesExists = false;
 
         for (Country country:countries) {
@@ -98,7 +97,7 @@ public class WineAdmin {
             country.addWine(wine);
         }
     }
-    public List<Wine> getAllWines(){
+    public List<Wine> getAllWines(){ // Get wine list
         List<Wine> wines = new ArrayList<>();
         for (Country country:countries) {
             wines.addAll(country.getWineList());
@@ -106,7 +105,7 @@ public class WineAdmin {
         return wines;
     }
 
-    public List<Country> getCountryList() {
+    public List<Country> getCountryList() { // Get country list
         return countries;
     }
 
@@ -114,7 +113,7 @@ public class WineAdmin {
         this.countries = wineAndCountries;
     }
 
-    public List<Wine> getWinesOfACountry(String countryName) {
+    public List<Wine> getWinesOfACountry(String countryName) { // Get wines of a country
         for (Country country:countries) {
             if (country.getCountryName().equals(countryName)){
                 return country.getWineList();
@@ -122,8 +121,8 @@ public class WineAdmin {
         }
         return null;
     }
-    // Get Wine by Name
-    public Wine getWineByName(String wineName) {
+
+    public Wine getWineByName(String wineName) { // Get Wine by Name
         Log.i("wine", wineName);
         for (Country country:countries) {
             for (Wine wine:country.getWineList()) {
@@ -146,6 +145,7 @@ public class WineAdmin {
         ratings.add(new Rating(5));
         return ratings;
     }
+
     public float getAverageRating() {
         float average = 0;
         for (Rating rating : ratings) {

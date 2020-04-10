@@ -28,7 +28,7 @@ public class JSONHelper {
             inputStream.read(buffer);
             inputStream.close();
             json = new String(buffer, "UTF-8");
-            //JSONArray jsonArray = new JSONArray(json);
+
             Gson gson = new Gson();
             WineItem item = gson.fromJson(json, WineItem.class);
 
@@ -41,7 +41,7 @@ public class JSONHelper {
         }
     }
 
-    public static boolean exportToJSON(Context context, List<Wine> wines){
+    public static boolean exportToJSON(Context context, List<Wine> wines){ // Export to data
         WineItem wineItem=new WineItem();
         wineItem.setWines(wines);
 
@@ -68,7 +68,7 @@ public class JSONHelper {
         }
         return false;
     }
-    public static void importFromJSON(Context context) throws IOException {
+    public static void importFromJSON(Context context) throws IOException { //Import from data
 
         Log.i(TAG,"Came here to fetch data");
         File file=new File(context.getFilesDir()+"/"+FILE_NAME);

@@ -76,17 +76,16 @@ public class CountryAdapter extends ArrayAdapter<Country> {
             deleteButton = convertView.findViewById(R.id.deleteImageButton);
             deleteButton.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onClick(View v) { // Delete country button
                     Log.i("removeCountry", countryList.get(position).getCountryName());
-                    wineAdmin.getCountryList().remove(countryList.get(position));
-
+                    wineAdmin.getCountryList().remove(countryList.get(position)); // Remove country from list
                     notifyDataSetChanged();
                 }
             });
             editButton = convertView.findViewById(R.id.editCountryList);
             editButton.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onClick(View v) { // Edit country button
                     Log.i("editCountry", countryList.get(position).getCountryName());
                     Intent intent = new Intent(getContext(), EditCountryActivity.class);
                     intent.putExtra("country",countryList.get(position).getCountryName());

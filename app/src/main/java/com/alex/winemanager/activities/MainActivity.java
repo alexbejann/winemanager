@@ -12,7 +12,6 @@ import com.alex.winemanager.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Boolean signupModeActive = false;
     private static int SPLASH_TIME_OUT = 1000;
 
     @Override

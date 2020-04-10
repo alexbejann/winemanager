@@ -23,7 +23,7 @@ public class PieChartActivity extends AppCompatActivity {
 
         PieChartView pieChartView = findViewById(R.id.pieChart);
         float[] pieValues = getCountryWineNumber();
-        pieChartView.setDataPoints(pieValues);
+        pieChartView.setDataPoints(pieValues); // Draw the chart based on the countries and their wines
     }
 
     private float[] getCountryWineNumber(){ // Counts and add number of wines of each country to pieChartValues

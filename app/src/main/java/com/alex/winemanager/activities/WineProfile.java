@@ -40,18 +40,19 @@ public class WineProfile extends AppCompatActivity {
         String nameWine = intent.getStringExtra("selectedWine");
         Wine wine = wineAdmin.getWineByName(nameWine);
         wineEditText = nameWine;
-      //  Wine wine = wineAdmin.getWineByName(getIntent().getExtras()).getString("selectedWine");
+
 
         imageView = findViewById(R.id.wineImage);
 
-        if(wine.getPicture().equals("default")){
-            imageView.setImageURI(Uri.fromFile(new File("argentina.jpg")));
-        }else if(!wine.getPicture().contains("data")){
+        if(!wine.getPicture().contains("data")){
+
             Log.i("imageDisplay", wine.getPicture());
-            //imageView.setImageURI(Uri.fromFile(new File("drawable://"+wine.getPicture()+".jpg")));
             imageView.setImageResource(getImageId(this, wine.getPicture()));
+
         }else{
+
             imageView.setImageURI(Uri.fromFile(new File(wine.getPicture())));
+
         }
 
 
@@ -81,7 +82,7 @@ public class WineProfile extends AppCompatActivity {
 
     }
 
-    public void editPressed(View view) {
+    public void editPressed(View view) { // Edit button
 
         Intent intent =new Intent(getApplicationContext(),EditWineActivity.class);
 

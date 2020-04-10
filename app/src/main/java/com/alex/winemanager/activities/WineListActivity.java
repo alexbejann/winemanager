@@ -23,7 +23,6 @@ import java.util.Objects;
 public class WineListActivity extends AppCompatActivity {
     private WineAdmin wineAdmin = WineAdmin.getInstance();
     private ListView listView;
-    private int hereYouAre;
     private List<Wine> wineList;
 
     @Override
@@ -36,7 +35,7 @@ public class WineListActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) { // Create menu upright
 
         if (item.getItemId() == R.id.addWine) { // ADD WINE FORM
             Intent intent = new Intent(getApplicationContext(), AddWineActivity.class);
@@ -73,7 +72,6 @@ public class WineListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), WineProfile.class);
-                hereYouAre = position;
                 intent.putExtra("selectedWine", wineList.get(position).getName());
                 Log.i("select", listView.getItemAtPosition(position).toString());
                 startActivity(intent);

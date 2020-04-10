@@ -32,12 +32,11 @@ public class EditWineActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_wine);
-
         setTitle("Edit Wine");
 
         Intent intent=getIntent();
-        String wineName =intent.getStringExtra("selectedWine");
-        wine = wineAdmin.getWineByName(wineName);
+        String wineName =intent.getStringExtra("selectedWine"); // Get selected wine
+        wine = wineAdmin.getWineByName(wineName); // Create wine object
         nameEdit = findViewById(R.id.nameEdit);
         grapeEdit = findViewById(R.id.grapesEdit);
         regionEdit = findViewById(R.id.regionEdit);
@@ -46,6 +45,7 @@ public class EditWineActivity extends AppCompatActivity {
         descriptionEdit = findViewById(R.id.descriptionEdit);
         winePicture = findViewById(R.id.editPicture);
         Log.i("edit",wine.getYear()+"");
+
         nameEdit.setText(wine.getName());
         grapeEdit.setText(wine.getGrapes());
         regionEdit.setText(wine.getRegion());
@@ -65,17 +65,17 @@ public class EditWineActivity extends AppCompatActivity {
 
     public void saveChanges(View view) { // Save Button
         if(wine != null){
+
             wine.setName(nameEdit.getText().toString().toUpperCase());
             wine.setCountry(countryEdit.getText().toString());
             wine.setGrapes(grapeEdit.getText().toString());
             wine.setRegion(regionEdit.getText().toString());
             wine.setDescription(descriptionEdit.getText().toString());
             wine.setPicture(wine.getPicture());
-            wineAdmin.removeWine(wine); // If country changed remove from frist country
+            wineAdmin.removeWine(wine); // If country changed remove from first country
             wineAdmin.addWineObject(wine); // Add wine to the new country
-
             finish();
-        }
 
+        }
     }
 }

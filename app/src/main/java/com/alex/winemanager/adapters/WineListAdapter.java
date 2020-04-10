@@ -45,10 +45,9 @@ public class WineListAdapter extends ArrayAdapter<Wine> {
             deleteButton = convertView.findViewById(R.id.deleteImageButton);
             deleteButton.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onClick(View v) { // Delete wine from list
                     Log.i("removeCountry", wineList.get(position).getName());
-                    wineAdmin.removeWine(wineList.get(position));
-                    //wineList.remove(position);
+                    wineAdmin.removeWine(wineList.get(position));//wineList.remove(position) remove wine
                     notifyDataSetChanged();
                 }
             });

@@ -15,9 +15,8 @@ public class AppReviewView extends View {
 
     private Paint paint = new Paint();
     private Path path = new Path();
-
-
     private boolean niceRatings = false;
+
 
     public AppReviewView(Context context) {
         super(context);
@@ -48,7 +47,7 @@ public class AppReviewView extends View {
 
         paint.setAntiAlias(true);
 
-        if (niceRatings) { //heart
+        if (niceRatings) { //Draw the heart
 
             path.moveTo(width / 2, height / 5);
 
@@ -87,7 +86,7 @@ public class AppReviewView extends View {
 
     public void setAppReview(float averageRating) {
 
-        if (averageRating > 3) {
+        if (averageRating > 3) { // Red for more than 3 ratings
             niceRatings = true;
             paint.setColor(getResources().getColor(R.color.colorAccent));
         } else {

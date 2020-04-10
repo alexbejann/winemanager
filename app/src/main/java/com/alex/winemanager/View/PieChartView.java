@@ -19,7 +19,7 @@ public class PieChartView extends View {
     private Paint slicePaint;
     private List<Integer> sliceColors;
     private RectF rectF;
-    private float[] values; // Values
+    private float[] values; // Values for pie chart
     private Random rnd;
 
     public PieChartView(Context context, AttributeSet attrs)  {
@@ -53,10 +53,10 @@ public class PieChartView extends View {
             }
         }
     }
- /*
+ /**
  * @param Color as integer
  * @return Color check if not used before
- *
+ * This method is checking if that color has been used before and store used colors in sliceColors
  * */
     private int checkColor(int argb) {
         if (!sliceColors.contains(argb)){
@@ -69,12 +69,18 @@ public class PieChartView extends View {
             return argb;
         }
     }
-
+/**
+ * @param values
+ *  This method is used in the pieChartActivity
+ * */
     public void setDataPoints(float[] values) {
         this.values = values;
         invalidate(); //Tells the chart to redraw itself
     }
-
+/**
+ * @return float[]
+ * This method is calculating the slices
+ * */
     private float[] scale() {
         float[] scaledValues = new float[this.values.length];
         float total = getTotal(); //Total all values supplied to the chart
@@ -83,7 +89,10 @@ public class PieChartView extends View {
         }
         return scaledValues;
     }
-
+/**
+ * @return float
+ * Calculates the total
+ * */
     private float getTotal() {
         float total = 0;
         for (float val : this.values)
