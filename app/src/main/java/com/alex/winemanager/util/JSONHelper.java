@@ -18,7 +18,7 @@ import java.util.List;
 public class JSONHelper {
 
     private static final String FILE_NAME="wines.json";
-    public static final String TAG="JSONHelper";
+    private static final String TAG="JSONHelper";
 
     public static void readFromJSON(WineAdmin wineAdmin, InputStream inputStream) { // Read and import from JSON file
         String json;
